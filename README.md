@@ -6,6 +6,7 @@ Technology Used:
     ->Glide
     ->Coroutines
 
+
 1-Home Page:->
     -The App opens with a page showing top 10 genres available from api.
     -With a drop down button to get all the top genres. 
