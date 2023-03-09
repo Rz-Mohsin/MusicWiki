@@ -1,7 +1,7 @@
 # MusicWiki
 -The app shows detailed information of genre, tracks, artists, albums available on last.fm Api: https://www.last.fm/api  
 -The App is based on MVVM pattern.  
-Download the apk : https://drive.google.com/file/d/1zQHSekG9gBUAmuaEdegVYk3X8_9XuTFk/view?usp=share_link  
+Download the apk : https://github.com/Rz-Mohsin/MusicWiki/blob/master/app-debug.apk    
 Technology Used:  
     ->Retrofit (To fetch data from Api)  
     ->Glide  
