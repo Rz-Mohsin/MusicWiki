@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:id="@+id/progressArtistDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="@+id/ivArtistImage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/tvArtistDes"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivArtistImage"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/default_image"
+                android:clickable="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPlaycount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Play count"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/tvFollowers"
+                app:layout_constraintBottom_toBottomOf="@+id/ivArtistImage"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFollowers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Followers"
+                android:textSize="12sp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/tvPlaycount"
+                app:layout_constraintBottom_toBottomOf="@+id/ivArtistImage"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/playCountValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="0"
+                android:textSize="12sp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@id/tvPlaycount"
+                app:layout_constraintBottom_toTopOf="@+id/tvPlaycount"
+                app:layout_constraintStart_toStartOf="@id/tvPlaycount"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/followersValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="0"
+                android:textSize="12sp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/tvFollowers"
+                app:layout_constraintBottom_toTopOf="@+id/tvFollowers"
+                app:layout_constraintEnd_toEndOf="@+id/tvFollowers"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvArtistName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text=""
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/playCountValue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvArtistTagList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/ivArtistImage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvArtistDes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:gravity="top|center_horizontal"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/rvArtistTagList"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTopTracks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Top Tracks"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvArtistDes"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTrackList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTopTracks"/>
+
+            <ProgressBar
+                android:id="@+id/progressTopTracks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="@+id/rvTrackList"
+                app:layout_constraintBottom_toBottomOf="@+id/rvTrackList"
+                app:layout_constraintStart_toStartOf="@+id/rvTrackList"
+                app:layout_constraintEnd_toEndOf="@+id/rvTrackList"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTopAlbums"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Top Albums"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/rvTrackList"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTopAlbumsList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tvTopAlbums"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <ProgressBar
+                android:id="@+id/progressTopAlbums"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="@+id/rvTopAlbumsList"
+                app:layout_constraintBottom_toBottomOf="@+id/rvTopAlbumsList"
+                app:layout_constraintStart_toStartOf="@+id/rvTopAlbumsList"
+                app:layout_constraintEnd_toEndOf="@+id/rvTopAlbumsList"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnBackPress"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_drop_down_btn"
+        android:src="@drawable/ic_baseline_chevron_left_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
